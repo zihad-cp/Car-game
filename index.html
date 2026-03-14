@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Easy & Beautiful Car Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="ui-top">
+    <div class="panel left">
+      <div id="score">Score: 0</div>
+      <div id="best" title="Local best scores">Best: 0</div>
+    </div>
+
+    <div class="panel center">
+      <button id="easyToggle" class="btn toggle">Easy: ON</button>
+      <button id="pauseBtn" class="btn">Pause</button>
+      <button id="muteBtn" class="btn">🔊</button>
+      <button id="restartBtn" class="btn">Restart</button>
+    </div>
+
+    <div class="panel right">
+      <div id="lives">Lives: ♥♥♥♥♥</div>
+      <button id="showScores" class="btn small">Top Scores</button>
+    </div>
+  </div>
+
+  <main>
+    <canvas id="game" width="1000" height="620" aria-label="Top-down car game"></canvas>
+
+    <div id="overlay">
+      <h1>Easy & Beautiful Car Game</h1>
+      <p id="overlay-sub">Tap / press SPACE to start. Use ← → or A/D to change lane, ↑ / W to speed up.</p>
+      <div id="overlay-controls">
+        <button id="startBtn" class="btn large">Start</button>
+        <button id="howBtn" class="btn small">How to play</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="touch-controls">
+    <button id="leftBtn" class="touch">◀</button>
+    <button id="upBtn" class="touch">▲</button>
+    <button id="rightBtn" class="touch">▶</button>
+  </div>
+
+  <div id="scoresModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <h3>Top Local Scores</h3>
+      <ol id="scoresList"></ol>
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
+        <button id="clearScores" class="btn small">Clear</button>
+        <button id="closeScores" class="btn small">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
